@@ -1,14 +1,19 @@
 <?php
 require_once 'func.php';
 
-$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); 
+$uri = parse_url($_SERVER['REQUEST_URI'])['path']; 
+// dd($uri);
 
-if ($uri === '/pease/' || $uri === '/pease/index.php') {
-    require 'controllers/index.php';
-} elseif ($uri === '/pease/about.php') {
-    require 'controllers/about.php';
-} elseif ($uri === '/pease/contact.php') {
-    require 'controllers/contact.php';
-} else {
-    require 'controllers/404.php'; 
+$routes=[ '/pease/' =>     'controllers/index.php',  
+'/pease/index.php'=> 'controllers/index.php',
+'/pease/about.php'=> 'controllers/about.php',
+'/pease/contact.php'=> 'controllers/contact.php',
+'*'=>'controllers/404.php'
+];
+
+if(array_key_exists($uri,$routes)){
+  require $routes[$uri];
+}else{
+  require$routes['*'];
 }
+
