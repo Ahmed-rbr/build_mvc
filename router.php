@@ -1,13 +1,7 @@
 <?php
 $uri = parse_url($_SERVER['REQUEST_URI'])['path']; 
+$routes=require_once ('routes.php');
 
-$routes=[ '/pease/' =>     'controllers/index.php',  
-'/pease/index.php'=> 'controllers/index.php',
-'/pease/about.php'=> 'controllers/about.php',
-'/pease/contact.php'=> 'controllers/contact.php',
-'/pease/notes.php'=> 'controllers/notes.php',
-'/pease/note.php'=> 'controllers/note.php',
-];
 
 
 function routToController($uri,$routes){
