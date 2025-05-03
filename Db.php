@@ -1,7 +1,8 @@
 <?php 
 
 class Database{
-public $conn;
+  public $conn;
+  public $stmt;
 
   public function __construct($config,$username='toto',$pwd='')
   {
@@ -20,9 +21,27 @@ $dsn="mysql:".http_build_query( $config,'',';');
   public function query($query,$params=[]){
     
     
-    $stmt=$this->conn->prepare($query);
-    $stmt->execute($params);
+    $this->stmt=$this->conn->prepare($query);
+    $this->stmt->execute($params);
     
    return $this;
+  }
+
+  public function find(){
+    return $this->stmt->fetch();
+        
+      } 
+      
+public function findOrFail(){
+$resultat=$this->find();    
+if(!$resultat)abort();
+
+return $resultat;
+} 
+
+public function get(){
+    return $this->stmt->fetchAll();
+
+    
   }
 }
