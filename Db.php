@@ -17,12 +17,12 @@ $dsn="mysql:".http_build_query( $config,'',';');
     
   }
 
-  public function query($query){
+  public function query($query,$params=[]){
     
     
     $stmt=$this->conn->prepare($query);
-    $stmt->execute();
+    $stmt->execute($params);
     
-   return $stmt;
+   return $this;
   }
 }
