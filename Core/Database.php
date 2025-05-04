@@ -1,5 +1,6 @@
 <?php 
-
+namespace Core;
+use PDO;
 class Database{
   public $conn;
   public $stmt;
@@ -34,7 +35,7 @@ $dsn="mysql:".http_build_query( $config,'',';');
       
 public function findOrFail(){
 $resultat=$this->find();    
-if(!$resultat)abort();
+if(!$resultat){abort();}
 
 return $resultat;
 } 

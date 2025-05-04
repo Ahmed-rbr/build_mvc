@@ -1,4 +1,6 @@
 <?php
+use Core\Database;
+
 $config=require basePath( 'config.php');
 $db=new Database($config['database']);
 $notes=$db->query("SELECT * from notes where user_id=1")->get();

@@ -1,4 +1,5 @@
 <?php 
+use Core\Response;
 
 function dd($value){
   echo'<pre>';
@@ -14,7 +15,7 @@ function authorize($condition,$status=Response::NOT_AUTH){
   if (!$condition){
     abort(Response::NOT_AUTH);
   
-  }
+  } 
 }
  
 function basePath($path){
@@ -26,3 +27,4 @@ function view($path,$attributs=[]){
 extract($attributs);
   require basePath('views/'.$path) ;
 }
+

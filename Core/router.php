@@ -10,9 +10,10 @@ if(array_key_exists($uri,$routes)){
   require basePath($routes[$uri]);
 }else{
   abort();
-}}
+}
+}
 function abort($code=404){
-  http_response_code(404);
+  http_response_code($code);
   require basePath("controllers/{$code}.php");
   die()
 ;

@@ -1,4 +1,7 @@
 <?php
+use Core\Database;
+use Core\Validation;
+
 $config=require basePath('config.php');
 
 $db=new Database($config['database']);

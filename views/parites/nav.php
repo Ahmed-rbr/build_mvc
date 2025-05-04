@@ -15,10 +15,10 @@
         </button>
     </div>
     <div class="hidden lg:flex lg:gap-x-12">
-        <a href="/pease/public/" class="<?= urli('/pease/public/index') || urli('/pease/public/') ? 'bg-gray-900 px-2 rounded text-white' : 'text-gray-300' ?> text-sm/6 font-semibold">Home</a>
+        <a href="/pease/public/" class="<?= urli('/pease/public/') ? 'bg-gray-900 px-2 rounded text-white' : 'text-gray-300' ?> text-sm/6 font-semibold">Home</a>
         <a href="/pease/about" class="<?= urli('/pease/about') ? 'bg-gray-900 px-2 rounded text-white' : 'text-gray-300' ?> text-sm/6 font-semibold">About</a>
         <a href="/pease/contact" class="<?= urli('/pease/contact') ? 'bg-gray-900 px-2 rounded text-white' : 'text-gray-300' ?> text-sm/6 font-semibold">Contact</a>
-        <a href="/pease/notes" class="<?= urli('/pease/notes/index') ? 'bg-gray-900 px-2 rounded text-white' : 'text-gray-300' ?> text-sm/6 font-semibold">Notes</a>
+        <a href="/pease/notes" class="<?= urli('/pease/notes') ? 'bg-gray-900 px-2 rounded text-white' : 'text-gray-300' ?> text-sm/6 font-semibold">Notes</a>
     </div>
     <div class="hidden lg:flex lg:flex-1 lg:justify-end">
         <a href="#" class="text-sm/6 font-semibold text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>

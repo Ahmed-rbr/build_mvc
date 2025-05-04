@@ -1,7 +1,8 @@
 <?php
 
 return 
- [ '/pease/public/' =>     'controllers/index.php',  
+ [ 
+'/pease/public/' => 'controllers/index.php',  
 '/pease/public/index'=> 'controllers/index.php',
 '/pease/about'=> 'controllers/about.php',
 '/pease/notes'=> 'controllers/notes/index.php',
