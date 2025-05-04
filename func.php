@@ -16,3 +16,13 @@ function authorize($condition,$status=Response::NOT_AUTH){
   
   }
 }
+ 
+function basePath($path){
+
+  return BASE_PATH .$path;
+}
+
+function view($path,$attributs=[]){
+extract($attributs);
+  require basePath('views/'.$path) ;
+}

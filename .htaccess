@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteBase /pease/
+RewriteBase /pease/public/
 
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
