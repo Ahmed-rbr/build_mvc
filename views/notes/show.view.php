@@ -11,6 +11,11 @@ require_once basePath('views/parites/nav.php')
 <p>
  <?=htmlspecialchars( $note['body']) ?> 
 </p>
+<form method="post" class="mt-4">
+    <input type="hidden" name="id" value="<?=$note['id']?>">
+<button class="text-sm text-red-500">Delete</button>
+
+</form>
        </div>
       </div>
 
