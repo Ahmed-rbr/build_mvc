@@ -1,5 +1,8 @@
 <?php
+use Core\App;
+
 use Core\Database;
+$db=App::resolve(Database::class);
 
 $config=require basePath( 'config.php');
 $db=new Database($config['database']);

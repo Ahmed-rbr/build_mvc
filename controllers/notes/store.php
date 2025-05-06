@@ -1,7 +1,12 @@
 <?php
 
+use Core\App;
+
 use Core\Database;
 use Core\Validation;
+
+$db=App::resolve(Database::class);
+
 $config=require basePath('config.php');
 
 $db=new Database($config['database']);
