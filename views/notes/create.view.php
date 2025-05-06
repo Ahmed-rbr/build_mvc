@@ -3,7 +3,7 @@ require_once basePath('views/parites/head.php') ;
 require_once basePath('views/parites/nav.php')
  ;?>
 <main class="mt-24 w-4/5 md:w-3/5 m-auto">
-  <form method="POST">
+  <form method="POST" action="/pease/notes">
      
        
 
@@ -14,13 +14,8 @@ require_once basePath('views/parites/nav.php')
          <?php if(isset($errs['body'])){
          ?>
                    <p class="text-red-400 text-xs mt-2"><?= $errs['body'] ?></p>
-                   <?php } ?>
+                   <?php  } ?>
           </div>
-
-     
-
-        
-
 
 
   <div class="mt-6 flex items-center justify-end gap-x-6">

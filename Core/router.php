@@ -30,7 +30,7 @@ $this->add("GET",$uri,$controller);
   }
   public function route($uri,$method){
     foreach($this->routes as $route){
-      if($route['uri'] === $uri && $route['method']=== strtoupper($method)){
+      if($route['uri'] ===strtolower($uri)  && $route['method']=== strtoupper($method)){
         return require basePath($route['controller']) ;
       }
 
@@ -42,8 +42,7 @@ $this->add("GET",$uri,$controller);
   protected function abort($code=404){
   http_response_code($code);
   require basePath("controllers/{$code}.php");
-  die()
-;
+  die();
 }
 }
 
