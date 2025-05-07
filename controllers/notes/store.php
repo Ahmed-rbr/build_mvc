@@ -7,9 +7,7 @@ use Core\Validation;
 
 $db=App::resolve(Database::class);
 
-$config=require basePath('config.php');
 
-$db=new Database($config['database']);
 $errs=[];
 if(!Validation::string($_POST['body'],1,1000))
 {
