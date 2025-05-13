@@ -18,7 +18,11 @@
         <a href="/pease/public/" class="<?= urli('/pease/public/') ? 'bg-gray-900 px-2 rounded text-white' : 'text-gray-300' ?> text-sm/6 font-semibold">Home</a>
         <a href="/pease/about" class="<?= urli('/pease/about') ? 'bg-gray-900 px-2 rounded text-white' : 'text-gray-300' ?> text-sm/6 font-semibold">About</a>
         <a href="/pease/contact" class="<?= urli('/pease/contact') ? 'bg-gray-900 px-2 rounded text-white' : 'text-gray-300' ?> text-sm/6 font-semibold">Contact</a>
+                <?php if($_SESSION['user']??false){?>
+
         <a href="/pease/notes" class="<?= urli('/pease/notes') ? 'bg-gray-900 px-2 rounded text-white' : 'text-gray-300' ?> text-sm/6 font-semibold">Notes</a>
+            <?php }  ?>
+
     </div>
     <div class="hidden gap-4 lg:flex lg:flex-1 lg:justify-end">
         <?php if($_SESSION['user']??false){?>

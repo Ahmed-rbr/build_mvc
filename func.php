@@ -35,13 +35,12 @@ extract($attributs);
 }
 
 
-function  login($user){
-$_SESSION['user']=[
+function login($user) {
+    $_SESSION['user'] = [
+        'email' => $user['email'],
+        'user_id'    => $user['user_id']
+    ];
 
-  'email'=>$user['email'],
-  
-
-];
 
 session_regenerate_id(true);
 }

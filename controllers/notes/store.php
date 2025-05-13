@@ -6,7 +6,7 @@ use Core\Database;
 use Core\Validation;
 
 $db=App::resolve(Database::class);
-
+$user_id=$_SESSION['user']['user_id'];
 
 $errs=[];
 if(!Validation::string($_POST['body'],1,1000))
@@ -25,7 +25,7 @@ return view('notes/create.view.php',[
   $db->query('INSERT into notes (body,user_id) 
   values(:body,:user_id)',
 [':body'=>$_POST['body'],
-':user_id'=>1]);  
+':user_id'=>$user_id]);  
 
 header('location: /pease/notes');
 die;

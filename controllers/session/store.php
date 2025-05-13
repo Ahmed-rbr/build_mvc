@@ -30,9 +30,10 @@ $user=$db->query('SELECT * from usr where email=:email',[
 
   
   if($user){
+
     if(password_verify($pwd,$user['pwd'])){
 
- login([ 'email'=>$email]);
+ login(['email'=>$email,'user_id'=>$user['id']]);
       header('location:/pease/public/');
 exit;
 }
