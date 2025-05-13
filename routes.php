@@ -12,4 +12,7 @@ $router->delete('/pease/note/update','controllers/notes/destroy.php');
 $router->get('/pease/note/update','controllers/notes/update.php');
 $router->patch('/pease/note','controllers/notes/upd.php');
 $router->get('/pease/register','controllers/registration/create.php')->only("guest");
-$router->post('/pease/register','controllers/registration/store.php');
+$router->post('/pease/register','controllers/registration/store.php')->only("guest");
+$router->get('/pease/session','controllers/session/create.php')->only("guest");
+$router->post('/pease/session','controllers/session/store.php')->only("guest");
+$router->delete('/pease/session','controllers/session/destroy.php')->only('auth');

@@ -14,6 +14,10 @@ public static function email($email){
 return filter_var($email,FILTER_VALIDATE_EMAIL);
 
 }
+public static function isempty($username){
+return empty(trim($username));
+
+}
 
 public static function pwd($pwd) {
    $pattern = '/^(?=.*[A-Za-z])(?=.*\d).{6,}$/';

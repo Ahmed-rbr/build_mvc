@@ -20,14 +20,20 @@
         <a href="/pease/contact" class="<?= urli('/pease/contact') ? 'bg-gray-900 px-2 rounded text-white' : 'text-gray-300' ?> text-sm/6 font-semibold">Contact</a>
         <a href="/pease/notes" class="<?= urli('/pease/notes') ? 'bg-gray-900 px-2 rounded text-white' : 'text-gray-300' ?> text-sm/6 font-semibold">Notes</a>
     </div>
-    <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+    <div class="hidden gap-4 lg:flex lg:flex-1 lg:justify-end">
         <?php if($_SESSION['user']??false){?>
             <p> <?= htmlspecialchars($_SESSION['user']['email'])?></p>
-    
+            <form action="/pease/session" method="post">
+                <input type="hidden" name="__method" value="DELETE">
+                <button class="bg-gray-900 px-2 rounded text-white">Log Out</button>
+            </form>
+
         <?php } else { ?>
+            
+        <a href="/pease/register" class="<?= urli('/pease/register') ? 'bg-gray-900 px-2 rounded text-white' : 'text-gray-300' ?> text-sm/6 font-semibold">Rogister</a>
+        <a href="/pease/session" class="<?= urli('/pease/login') ? 'bg-gray-900 px-2 rounded text-white' : 'text-gray-300' ?> text-sm/6 font-semibold">Login</a>
 
      
-            <a href="/pease/register" class="text-sm/6 font-semibold text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
             <?php }?>
     </div>
 </nav> </header>

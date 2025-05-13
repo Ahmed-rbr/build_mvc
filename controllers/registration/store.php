@@ -44,15 +44,14 @@ header('location:/pease/public/');
 exit;
   }
   else{
-
+$pwd=password_hash($pwd,PASSWORD_DEFAULT);
     $db->query('INSERT INTO usr (username, email, pwd) VALUES (:username, :email,:pwd)',[
       'username'=>$username,
       'email'=>$email,
       'pwd'=>$pwd,
       ]);
 
-      $_SESSION['user']=['email'=>$email];
-      
+   
       header('location:/pease/public/');
 exit;
 
