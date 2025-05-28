@@ -1,18 +1,18 @@
 <?php
 
-$router->get('/pease/public/','controllers/index.php');
-$router->get('/pease/about','controllers/about.php');
-$router->get('/pease/contact',"controllers/contact.php");
+$router->get('/pease/public/','index.php');
+$router->get('/pease/about','about.php');
+$router->get('/pease/contact',"contact.php");
  
-$router->get('/pease/notes','controllers/notes/index.php')->only('auth');
-$router->get('/pease/note','controllers/notes/show.php')->only("auth");
-$router->get('/pease/notes/create','controllers/notes/create.php');
-$router->post('/pease/notes','controllers/notes/store.php');
-$router->delete('/pease/note/update','controllers/notes/destroy.php');
-$router->get('/pease/note/update','controllers/notes/update.php');
-$router->patch('/pease/note','controllers/notes/upd.php');
-$router->get('/pease/register','controllers/registration/create.php')->only("guest");
-$router->post('/pease/register','controllers/registration/store.php')->only("guest");
-$router->get('/pease/session','controllers/session/create.php')->only("guest");
-$router->post('/pease/session','controllers/session/store.php')->only("guest");
-$router->delete('/pease/session','controllers/session/destroy.php')->only('auth');
+$router->get('/pease/notes','notes/index.php')->only('auth');
+$router->get('/pease/note','notes/show.php')->only("auth");
+$router->get('/pease/notes/create','notes/create.php');
+$router->post('/pease/notes','notes/store.php');
+$router->delete('/pease/note/update','notes/destroy.php');
+$router->get('/pease/note/update','notes/update.php');
+$router->patch('/pease/note','notes/upd.php');
+$router->get('/pease/register','registration/create.php')->only("guest");
+$router->post('/pease/register','registration/store.php')->only("guest");
+$router->get('/pease/session','session/create.php')->only("guest");
+$router->post('/pease/session','session/store.php')->only("guest");
+$router->delete('/pease/session','session/destroy.php')->only('auth');

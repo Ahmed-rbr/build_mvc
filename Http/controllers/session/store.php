@@ -14,7 +14,6 @@ if(Validation::isempty($email)||Validation::isempty($email)){
   $errs['empty']='please fill all valids';
 }
 
-
 if(count($errs)){
 
 return view('session/create.view.php',[
@@ -39,10 +38,6 @@ exit;
 }
 
   }
-
-
-
-
 
 return view('session/create.view.php',[
   'errs'=>['email'=>'no user acount with this email and password was found']
