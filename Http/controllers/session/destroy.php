@@ -1,4 +1,7 @@
 <?php
-logout();
-header("location:/pease/public/");
-exit;
+use Core\Authenticator;
+
+$logOut=new Authenticator();
+$logOut->logout();
+
+redirect('/pease/public/');

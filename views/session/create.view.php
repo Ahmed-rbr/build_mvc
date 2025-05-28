@@ -44,9 +44,13 @@ require_once basePath('views/parites/nav.php')
 
        
       </div>
+       <?php if(isset($errs['pwd'])){
+         ?>
+                   <p class="text-red-400 text-xs mt-2"><?= $errs['pwd'] ?></p>
+                   <?php  } ?>
           <?php if(isset($errs['empty'])){
          ?>
-                   <p class="text-red-400 text-xs mt-2"><?= $errs['email'] ?></p>
+                   <p class="text-red-400 text-xs mt-2"><?= $errs['empty'] ?></p>
                    <?php  } ?>
       
       <div>

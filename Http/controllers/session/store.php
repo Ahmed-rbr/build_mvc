@@ -1,48 +1,36 @@
 <?php
 
-use Core\App;
-use Core\Database;
-use Core\Validation;
+use Core\Authenticator;
+use Http\Forms\LoginForm;
+
 
 $email=$_POST['email'];
 $pwd=$_POST['password'];
 
-$errs=[];
+$form=new LoginForm();
 
 
-if(Validation::isempty($email)||Validation::isempty($email)){
-  $errs['empty']='please fill all valids';
+if($form->validat($email,$pwd)){
+
+
+if((new Authenticator)->attampt($email,$pwd)){
+redirect('location:/pease/public/');
+
 }
 
-if(count($errs)){
+
+$form->error('email','no user acount with this email and password was found');
+
+
+};
+
+
+
 
 return view('session/create.view.php',[
-  'errs'=>$errs
+  'errs'=>$form->getErrs()
 ]);
-
-}
-$db=App::resolve(Database::class);
-
-$user=$db->query('SELECT * from usr where email=:email',[
-  'email'=>$email
-  ])->find();
-
-  
-  if($user){
-
-    if(password_verify($pwd,$user['pwd'])){
-
- login(['email'=>$email,'user_id'=>$user['id']]);
-      header('location:/pease/public/');
 exit;
-}
 
-  }
 
-return view('session/create.view.php',[
-  'errs'=>['email'=>'no user acount with this email and password was found']
-]);exit;
-  
-    
 
-  
