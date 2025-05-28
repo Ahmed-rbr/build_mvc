@@ -27,9 +27,13 @@ $form->error('email','no user acount with this email and password was found');
 
 
 Session::flash('errs',$form->getErrs()) ;
+Session::flash('old',[
+  'email'=>$_POST['email']
+]) ;
 
 return redirect('/pease/session');
 
+ $_SESSION['_flash'][$old]= [ 'email'=>$_POST['email']];
 
 
 
