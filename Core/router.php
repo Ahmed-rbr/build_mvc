@@ -67,6 +67,10 @@ protected function abort($code=404){
   require basePath("controllers/{$code}.php");
   die();
 }
+public function previouse(){
+  return $_SERVER['HTTP_REFERER'];
+}
+
 
 }
 

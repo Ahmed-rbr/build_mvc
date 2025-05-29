@@ -1,0 +1,16 @@
+{
+  "name": "s/pease",
+  "authors": [
+    {
+      "name": "Ahmed-rbr",
+      "email": "ahmed.rabar.dev@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Core\\": "Core/",
+      "Http\\": "Http/"
+    }
+  }
+}
