@@ -2,7 +2,7 @@
 session_start();
 
 
-use Core\Session;
+ use Core\Session;
 use Core\ValidationException;
 
 const BASE_PATH=__DIR__.'/../';
